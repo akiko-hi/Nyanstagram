@@ -14,10 +14,67 @@
   }
 }
 
+.search {
+  display: flex;
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+  padding: 0.2rem;
+
+  input {
+    flex: 1;
+    margin: 0 auto;
+    border: none;
+  }
+
+  .search_btn {
+    background: none;
+    img {
+      height: 2rem;
+    }
+  }
+}
+.title {
+  margin-left: 5rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.nav_images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+
+  img {
+    height: 2rem;
+    margin: 0 0.5rem;
+  }
+}
+.profile_img {
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+
+  &.video {
+    height: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &.account {
+    height: 3rem;
+    margin-right: 0.5rem;
+  }
+}
+
 main {
   display: flex;
-  padding: 1rem;
+  padding: 2rem 0;
   background: rgba(248, 248, 248, 0.377);
+  justify-content: center;
 
   .main_wrapper {
     display: flex;
@@ -25,14 +82,37 @@ main {
     flex: 1;
 
     &.posts {
+      max-width: 600px;
       overflow: auto;
+      margin-right: 2rem;
+    }
+
+    &.side {
+      flex: unset;
+      width: 350px;
+
+      > * {
+        margin-bottom: 1rem;
+      }
     }
   }
 
   .videos_section {
+    display: flex;
     border: 1px solid rgba(128, 128, 128, 0.74);
     border-radius: 5px;
     margin-bottom: 1rem;
+  }
+
+  .video_post {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 1rem;
+
+    .user_name {
+      font-size: 0.8rem;
+    }
   }
 
   .posts_section {
@@ -40,81 +120,34 @@ main {
     border: 1px solid rgba(128, 128, 128, 0.74);
   }
 }
-.Post {
-  display: flex;
-  flex-flow: column;
-  background: white;
-  border-radius: 5px;
 
-  >div {
-    padding: 0 .5rem
-  }
-.post_header {
-  display: flex;
+.user_account {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid gray;
-}
-}
 
+  .user_name {
+    font-weight: 600;
+  }
 
-.profile_img {
-  height: 3rem;
-  border-radius: 50%;
-  margin-right: 1rem;
+  .user_caption {
+    color: gray;
+  }
 }
 
-.edit_post {
-  height: 2rem;
-  margin-left: auto;
+.follow_btn {
+  padding: 0.5rem;
+  box-shadow: 0 0 2px cadetblue;
 }
+.suggestions {
+  display: grid;
+  grid-template-columns: 1fr auto;
 
-.post {
-  margin-bottom: 0.5rem;
-  max-height: 600px;
-  object-fit: cover;
-}
-
-.buttons_wrapper {
-  display: flex;
-
-  button {
+  p {
+    color: gray;
+  }
+  .see_all_btn {
     padding: 0.5rem;
-    background: none;
-
-    span {
-      font-size: 1.2rem;
-    }
+    box-shadow: 0 0 2px cadetblue;
   }
-
-  .favorite_btn {
-    margin-left: auto;
-  }
-
-  .like_btn {
-    padding-left: 0;
-  }
-}
-
-.view_all_comments {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.74);
-
-}
-
-.comment_section {
-  display: flex;
-  margin: .5rem;
-  
-  textarea {
-    border: none;
-    font-family: inherit;
-    resize: none;
-    flex: 1;
-  }
-
-  .post_btn {
-    padding: 0 1rem;
-  }
-
 }

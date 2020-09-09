@@ -14,8 +14,19 @@ code {
 
 button {
   border: none;
+  background: none;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+input {
+  border-radius: 5px;
+  font-family: inherit;
+  outline: none;
+}
+
+p {
+  margin: 0;
 }

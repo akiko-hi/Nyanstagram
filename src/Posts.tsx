@@ -21,7 +21,7 @@ export default function Posts() {
             <button><span role="img" aria-label="share">🎈</span></button>
             <button className="favorite_btn"><span role="img" aria-label="favorite">😻</span></button>
         </div>
-        <div>comments</div>
+        <div>captions</div>
         <div className="view_all_comments">View all comments</div>
         <div className="comment_section">
             <textarea placeholder="Say meow to this post"></textarea>
