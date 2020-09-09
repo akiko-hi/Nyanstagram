@@ -17,5 +17,6 @@ export default function AccountContainer({ img, userName, caption, children }: A
             <div className="user_caption">{caption}</div>
         </div>
         {children}
+        
     </div>
 }

@@ -67,61 +67,6 @@
 
 main {
   display: flex;
-  padding: 2rem 0;
-  background: rgba(248, 248, 248, 0.377);
-  justify-content: center;
-
-  .main_wrapper {
-    display: flex;
-    flex-flow: column;
-    flex: 1;
-
-    &.posts {
-      max-width: 600px;
-      overflow: auto;
-      margin-right: 2rem;
-    }
-
-    &.side {
-      flex: unset;
-      width: 350px;
-
-      > * {
-        margin-bottom: 1rem;
-      }
-    }
-  }
-
-  .see_all_btn {
-    padding: 0.5rem;
-    box-shadow: 0 0 2px cadetblue;
-  }
-  
-  .follow_btn {
-    padding: 0.5rem;
-    box-shadow: 0 0 2px cadetblue;
-  }
-
-  .videos_section {
-    display: flex;
-    border: 1px solid rgba(128, 128, 128, 0.74);
-    border-radius: 5px;
-    margin-bottom: 1rem;
-  }
-
-  .video_post {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: 1rem;
-
-    .user_name {
-      font-size: 0.8rem;
-    }
-  }
-
-  .posts_section {
-    border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.74);
-  }
+  flex-flow: column;
+  min-height: 0;
 }

@@ -1,14 +1,17 @@
 import React from 'react';
+import { NavLink, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import ProfilePic from './images/mugi.png';
-import Home from './images/home.png';
+import HomeIcon from './images/home.png';
 import Favorite from './images/heart.png';
 import Search from './images/search.png';
-import Posts from './Posts';
-import AccountContainer from './AccountContainer';
+import Home from './Home';
+import Profile from './Profile';
 
 
 function App() {
+
+
   return <div className="App">
 
     <header>
@@ -19,40 +22,23 @@ function App() {
       </div>
       <nav>
         <ul className="nav_images">
-          <li><img src={Home} alt="home" /></li>
-          <li><img src={Favorite} alt="favorite" /></li>
-          <li><img className="profile_img" src={ProfilePic} alt="profile" /></li>
+          <li><button><NavLink to="/"><img src={HomeIcon} alt="home" /></NavLink></button></li>
+          <li><button><img src={Favorite} alt="favorite" /></button></li>
+          <li><button><NavLink to="/profile"><img className="profile_img" src={ProfilePic} alt="profile" /></NavLink></button></li>
         </ul>
       </nav>
     </header>
 
+
     <main>
-      <div className="main_wrapper posts">
-        <div className="videos_section">
-          <div className="video_post">
-            <img className="profile_img video" src={ProfilePic} alt="profile" />
-            <p className="user_name">Amazing Mugi</p>
-          </div>
-        </div>
-
-        <div className="posts_section">
-          <Posts />
-
-
-        </div>
-
-      </div>
-
-      <div className="main_wrapper side">
-        <AccountContainer img="mugi.png" userName="AmazingMugi" caption="Mugi Hirai" />
-        <div className="suggestions">
-          <p>Suggestions For You</p>
-          <button className="see_all_btn">See All</button>
-        </div>
-        <AccountContainer img="mugi.png" userName="AmazingMugi" caption="Mugi Hirai">
-          <button className="follow_btn">Follow</button>
-        </AccountContainer>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+      </Switch>
     </main>
   </div>
 }
