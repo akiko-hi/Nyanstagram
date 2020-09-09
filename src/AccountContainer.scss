@@ -1,0 +1,53 @@
+.AccountContainer {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    .profile_img {
+        height: 3rem;
+        margin-right: 0.5rem;
+        border-radius: 50%;
+    }
+
+    .user_name {
+        font-weight: 600;
+    }
+
+    .user_caption {
+        color: gray;
+    }
+}
+
+.suggestions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    p {
+        color: gray;
+    }
+}
+
+.user_name {
+    font-weight: 600;
+}
+
+.user_caption {
+    color: gray;
+}
+
+.follow_btn {
+    padding: 0.5rem;
+    box-shadow: 0 0 2px cadetblue;
+}
+.suggestions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    p {
+        color: gray;
+    }
+    .see_all_btn {
+        padding: 0.5rem;
+        box-shadow: 0 0 2px cadetblue;
+    }
+}

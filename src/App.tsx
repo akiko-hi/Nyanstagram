@@ -5,6 +5,7 @@ import Home from './images/home.png';
 import Favorite from './images/heart.png';
 import Search from './images/search.png';
 import Posts from './Posts';
+import AccountContainer from './AccountContainer';
 
 
 function App() {
@@ -43,28 +44,17 @@ function App() {
       </div>
 
       <div className="main_wrapper side">
-        <div className="user_account">
-          <img className="profile_img account" src={ProfilePic} alt="profile" />
-          <div>
-            <div className="user_name">AmazingMugi</div>
-            <div className="user_caption">Mugi Hirai</div>
-          </div>
-        </div>
+        <AccountContainer img="mugi.png" userName="AmazingMugi" caption="Mugi Hirai" />
         <div className="suggestions">
           <p>Suggestions For You</p>
           <button className="see_all_btn">See All</button>
         </div>
-        <div className="user_account">
-          <img className="profile_img" src={ProfilePic} alt="profile" />
-          <div>
-            <div className="user_name">AmazingMugi</div>
-            <div className="user_caption">Mugi Hirai</div>
-          </div>
+        <AccountContainer img="mugi.png" userName="AmazingMugi" caption="Mugi Hirai">
           <button className="follow_btn">Follow</button>
-        </div>
+        </AccountContainer>
       </div>
     </main>
-  </div >
+  </div>
 }
 
 export default App;

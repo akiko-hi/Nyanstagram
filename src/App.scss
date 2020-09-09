@@ -63,11 +63,6 @@
     height: 4rem;
     margin-bottom: 0.5rem;
   }
-
-  &.account {
-    height: 3rem;
-    margin-right: 0.5rem;
-  }
 }
 
 main {
@@ -97,6 +92,16 @@ main {
     }
   }
 
+  .see_all_btn {
+    padding: 0.5rem;
+    box-shadow: 0 0 2px cadetblue;
+  }
+  
+  .follow_btn {
+    padding: 0.5rem;
+    box-shadow: 0 0 2px cadetblue;
+  }
+
   .videos_section {
     display: flex;
     border: 1px solid rgba(128, 128, 128, 0.74);
@@ -118,36 +123,5 @@ main {
   .posts_section {
     border-radius: 5px;
     border: 1px solid rgba(128, 128, 128, 0.74);
-  }
-}
-
-.user_account {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-
-  .user_name {
-    font-weight: 600;
-  }
-
-  .user_caption {
-    color: gray;
-  }
-}
-
-.follow_btn {
-  padding: 0.5rem;
-  box-shadow: 0 0 2px cadetblue;
-}
-.suggestions {
-  display: grid;
-  grid-template-columns: 1fr auto;
-
-  p {
-    color: gray;
-  }
-  .see_all_btn {
-    padding: 0.5rem;
-    box-shadow: 0 0 2px cadetblue;
   }
 }
