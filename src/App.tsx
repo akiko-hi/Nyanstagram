@@ -2,16 +2,14 @@ import React from 'react';
 import { NavLink, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import ProfilePic from './images/mugi.png';
-import HomeIcon from './images/home.png';
-import Favorite from './images/heart.png';
+import { ReactComponent as HomeIcon } from './images/home.svg';
+import { ReactComponent as FavoriteIcon } from './images/heart.svg';
 import Search from './images/search.png';
 import Home from './Home';
 import Profile from './Profile';
 
 
 function App() {
-
-
   return <div className="App">
 
     <header>
@@ -22,8 +20,8 @@ function App() {
       </div>
       <nav>
         <ul className="nav_images">
-          <li><button><NavLink to="/"><img src={HomeIcon} alt="home" /></NavLink></button></li>
-          <li><button><img src={Favorite} alt="favorite" /></button></li>
+          <li><NavLink exact to="/"><HomeIcon /></NavLink></li>
+          <li><NavLink to="/favorite"><FavoriteIcon/></NavLink></li>
           <li><button><NavLink to="/profile"><img className="profile_img" src={ProfilePic} alt="profile" /></NavLink></button></li>
         </ul>
       </nav>

@@ -7,7 +7,7 @@
     display: flex;
     border-bottom: 1px solid gray;
     align-items: center;
-    padding: .7rem 0;
+    padding: 0.7rem 0;
 
     > * {
       flex: 1;
@@ -52,10 +52,24 @@
     list-style: none;
   }
 
+  svg,
   img {
     height: 2rem;
     margin: 0 0.5rem;
   }
+
+  svg {
+    fill: none;
+    stroke: black;
+    stroke-width: 0.75px;
+  }
+
+  .active {
+    svg {
+      fill: black;
+      stroke: none;
+    }
+  } 
 }
 .profile_img {
   height: 2rem;
