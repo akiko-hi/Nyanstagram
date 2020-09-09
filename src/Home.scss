@@ -44,5 +44,8 @@
 
 .posts_section {
     border-radius: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.74);
+
+    >* {
+        margin-bottom: 3rem;
+    }
 }

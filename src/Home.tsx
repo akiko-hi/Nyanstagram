@@ -26,7 +26,6 @@ export default function Home() {
             
             <div className="posts_section">
                 {posts.map(post => <Post post={post} />)}
-
             </div>
 
         </div>
