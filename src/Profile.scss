@@ -72,11 +72,29 @@
 .posts_gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    min-width: 60rem;
 
-    img {
+    .post_img {
         height: 18rem;
         width: 18rem;
         object-fit: cover;
         margin: 1rem;
+    }
+
+    .spinner {
+        height: 3rem;
+        width: 3rem;
+        grid-column-start: 2;
+        margin: 0 auto;
+        animation: rotation 3s infinite linear;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

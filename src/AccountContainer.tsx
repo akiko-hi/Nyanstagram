@@ -11,7 +11,7 @@ type AccountContainerProps = {
 export default function AccountContainer({ img, userName, caption, children }: AccountContainerProps) {
     return <div className="AccountContainer">
 
-        <img className="profile_img account" src={"./images/" + img} alt="profile" />
+        <img className="profile_img account" src={img} alt="profile" />
         <div>
             <div className="user_name">{userName}</div>
             <div className="user_caption">{caption}</div>

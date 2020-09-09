@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Profile.scss';
 import Setting from "./images/setting.png";
 import ProfilePic from './images/mugi.png';
-import Post1 from "./images/mugi_post1.jpg";
-import Post2 from "./images/mugi_post2.jpg";
-import Post3 from "./images/mugi_post3.jpg";
+import { getMyPosts, MyPost } from './api';
+import Spinner from './images/spinner.png';
 
 export default function Profile() {
+
+    const [myPosts, setMyPosts] = useState<MyPost[]>([])
+
+    useEffect(() => {
+        load()
+
+        async function load() {
+            const res = await getMyPosts()
+            setMyPosts(res)
+        }
+    })
+
     return <div className="Profile">
 
         <div className="profile_outer_container">
@@ -29,9 +40,10 @@ export default function Profile() {
                 </div>
             </div>
             <div className="posts_gallery">
-                <img src={Post1} alt="post" />
-                <img src={Post2} alt="post" />
-                <img src={Post3} alt="post" />
+                {myPosts.length === 0 ?
+                <img className="spinner" src={Spinner} alt="loading"/> 
+                :
+                myPosts.map(myPost => <img className="post_img" src={myPost.img} alt="post" />)}
             </div>
         </div>
     </div>

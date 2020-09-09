@@ -2,10 +2,11 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
+    padding: 1rem 0;
 
     .profile_img {
         height: 3rem;
-        margin-right: 0.5rem;
+        margin-right: 1rem;
         border-radius: 50%;
     }
 
