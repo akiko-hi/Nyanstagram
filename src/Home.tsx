@@ -4,6 +4,7 @@ import Post from './Post';
 import AccountContainer from './AccountContainer';
 import { getPosts, PostInfo } from './api';
 import ProfilePic from './images/mugi.png';
+import Videos from "./Videos";
 
 export default function Home() {
 
@@ -18,16 +19,11 @@ export default function Home() {
             setPosts(allPosts)
         }
     }, [])
-    
+
     return <div className="Home">
         <div className="main_wrapper posts">
-            <div className="videos_section">
-                <div className="video_post">
-                    <img className="profile_img video" src={ProfilePic} alt="profile" />
-                    <p className="user_name">Amazing Mugi</p>
-                </div>
-            </div>
-
+            <Videos />
+            
             <div className="posts_section">
                 {posts.map(post => <Post post={post} />)}
 

@@ -1,0 +1,19 @@
+.Videos {
+    display: flex;
+    border: 1px solid rgba(128, 128, 128, 0.74);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background: white;
+}
+
+.VideoPost {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 1rem;
+
+    .user_name {
+        font-size: 0.8rem;
+        font-weight: lighter;
+    }
+}
