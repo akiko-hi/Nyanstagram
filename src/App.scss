@@ -8,6 +8,7 @@
     border-bottom: 1px solid gray;
     align-items: center;
     padding: 0.7rem 0;
+    position: relative;
 
     > * {
       flex: 1;
@@ -79,6 +80,27 @@
   &.video {
     height: 4rem;
     margin-bottom: 0.5rem;
+  }
+}
+
+.dropdown_menu {
+  display: flex;
+  flex-flow: column;
+  padding: 0;
+  position: absolute;
+  background: lightgray;
+  border: 1px solid black;
+  top: 100%;
+  padding: .5rem 5rem .5rem 1rem;
+  border-radius: 5px;
+
+  li {
+    list-style: none;
+    padding: .5rem 0;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
