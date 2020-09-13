@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import ProfilePic from './images/mugi.png';
@@ -7,11 +7,23 @@ import { ReactComponent as FavoriteIcon } from './images/heart.svg';
 import Search from './images/search.png';
 import Home from './Home';
 import Profile from './Profile';
+import { whoAmI } from './api';
+import { User } from './types';
 
 
 function App() {
 
   const [openDropdownMenu, setOpenDropdownMenu] = useState(false)
+  const [user, setUser] = useState<User | null>()
+
+  useEffect(() => {
+    load()
+
+    async function load() {
+      const res = await whoAmI()
+      setUser(res)
+    }
+  }, [])
 
   return <div className="App">
 
@@ -26,7 +38,7 @@ function App() {
           <li><NavLink exact to="/"><HomeIcon /></NavLink></li>
           <li><NavLink to="/favorite"><FavoriteIcon /></NavLink></li>
           <li><button onClick={() => setOpenDropdownMenu(!openDropdownMenu)}>
-              <img className="profile_img" src={ProfilePic} alt="profile" />
+            <img className="profile_img" src={user?.profile_img} alt="profile" />
           </button></li>
           {openDropdownMenu &&
             <ul className="dropdown_menu">
