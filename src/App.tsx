@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Switch, Route } from 'react-router-dom';
-import './App.scss';
-import ProfilePic from './images/mugi.png';
-import { ReactComponent as HomeIcon } from './images/home.svg';
-import { ReactComponent as FavoriteIcon } from './images/heart.svg';
-import Search from './images/search.png';
-import Home from './Home';
-import Profile from './Profile';
+import React, { useEffect, useState } from 'react';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import { whoAmI } from './api';
+import './App.scss';
+import Home from './Home';
+import { ReactComponent as FavoriteIcon } from './images/heart.svg';
+import { ReactComponent as HomeIcon } from './images/home.svg';
+import Search from './images/search.png';
+import Profile from './Profile';
 import { User } from './types';
 
 

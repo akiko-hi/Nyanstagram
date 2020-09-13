@@ -27,7 +27,7 @@ export default function Home() {
             <Videos />
 
             <div className="posts_section">
-                {posts.map(post => <Post post={post} />)}
+                {posts.map(post => <Post key={post.id} post={post} />)}
             </div>
 
         </div>
