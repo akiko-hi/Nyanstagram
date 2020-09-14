@@ -1,26 +1,7 @@
-import MugiPic from './images/mugi.png';
-import SumiPic from './images/sumi.png';
 import MugiPost1 from './images/mugi_post1.jpg';
 import MugiPost2 from './images/mugi_post2.jpg';
 import MugiPost3 from './images/mugi_post3.jpg';
-import SumiPost1 from './images/sumi_post1.jpg';
-import { PostInfo, MyPost, User, Comment } from './types';
-
-
-const posts = [
-    {
-        id: 1,
-        userName: "amazing mugi",
-        profileImg: MugiPic,
-        postImg: MugiPost1,
-    },
-    {
-        id: 2,
-        userName: "sumi the best",
-        profileImg: SumiPic,
-        postImg: SumiPost1
-    }
-]
+import { Comment, MyPost, PostInfo, User } from './types';
 
 const myPosts = [
     { img: MugiPost1 },
@@ -38,7 +19,8 @@ function post(body: any): RequestInit | undefined {
 
 //post
 export async function getPosts(): Promise<PostInfo[]> {
-    return posts
+    const res = await fetch('/api/getPosts')
+    return res.json()
 }
 
 export async function getMyPosts(): Promise<MyPost[]> {

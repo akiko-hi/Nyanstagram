@@ -3,13 +3,12 @@ import './Home.scss';
 import Post from './Post';
 import AccountContainer from './AccountContainer';
 import { getPosts } from './api';
-import { PostInfo } from './types';
 import Videos from "./Videos";
 import ProfilePic from './images/mugi.png';
 import ProfilePicSumi from './images/sumi.png';
+import { PostInfo } from "./types";
 
 export default function Home() {
-
 
     const [posts, setPosts] = useState<PostInfo[]>([])
 
@@ -27,7 +26,9 @@ export default function Home() {
             <Videos />
 
             <div className="posts_section">
-                {posts.map(post => <Post key={post.id} post={post} />)}
+                {posts.length === 0 ? <>loading...</>
+                :
+                posts.map(post => <Post key={post.id} post={post} />)}
             </div>
 
         </div>

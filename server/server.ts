@@ -3,7 +3,8 @@ import cookieSession from 'cookie-session';
 import express, { Request, Response } from 'express';
 import path from "path";
 import { whoAmI } from './user';
-import { postComment, getComments }  from './comment'
+import { postComment, getComments }  from './comment';
+import { getPosts } from './post';
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -27,10 +28,15 @@ app.use('/static', express.static(path.join(__dirname, 'static')))
 
 //user
 app.get('/api/whoAmI', action(whoAmI))
+app.post('/api/logIn')
 
-//post
+//comment
 app.get('/api/post/:post_id/comments', action(getComments))
 app.post('/api/post/:post_id/comments', action(postComment))
+
+//post
+app.get('/api/getPosts', action(getPosts))
+
 
 // app.get('*', (req, res, next) => {
 // 	res.sendFile(path.join(__dirname, 'index.html'))
