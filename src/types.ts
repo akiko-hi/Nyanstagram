@@ -10,7 +10,15 @@ export type User = {
     id: number,
     user_name: string,
     profile_img: string,
+    caption: string,
     email: string
+}
+
+export type UserInfo = {
+    user_id: number,
+    user_name: string,
+    profile_img: string,
+    caption: string
 }
 
 export type MyPost = {
@@ -18,6 +26,12 @@ export type MyPost = {
 }
 
 export type Comment = {
-    user_id: number,
+    user: User
     comment: string
+    date: number
+}
+
+export type UserPageType = {
+    user: UserInfo
+    post: PostInfo[]
 }

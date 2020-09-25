@@ -2,7 +2,7 @@ import bodyParser from 'body-parser';
 import cookieSession from 'cookie-session';
 import express, { Request, Response } from 'express';
 import path from "path";
-import { whoAmI } from './user';
+import { whoAmI, getUserPage } from './user';
 import { postComment, getComments }  from './comment';
 import { getPosts } from './post';
 
@@ -28,6 +28,7 @@ app.use('/static', express.static(path.join(__dirname, 'static')))
 
 //user
 app.get('/api/whoAmI', action(whoAmI))
+app.get('/api/user/:user_id', action(getUserPage))
 app.post('/api/logIn')
 
 //comment

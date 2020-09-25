@@ -62,6 +62,9 @@ function App() {
         <Route path="/profile">
           <Profile />
         </Route>
+        <Route path="/user/:id">
+          <UserPage />
+        </Route>
       </Switch>
     </main>
   </div>

@@ -25,8 +25,10 @@ export default function Post({ post }: PostProps) {
     return <div className="Post">
 
         <div className="post_header">
+            <Link className="user_link" to={`/user/${post.user.id}`}>
             <img className="profile_img" src={post.user.profile_img} alt="profile" />
             <p>{post.user.user_name}</p>
+            </Link>
             <img className="edit_post" src={EditBtn} alt="edit" />
         </div>
 

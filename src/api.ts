@@ -1,7 +1,7 @@
 import MugiPost1 from './images/mugi_post1.jpg';
 import MugiPost2 from './images/mugi_post2.jpg';
 import MugiPost3 from './images/mugi_post3.jpg';
-import { Comment, MyPost, PostInfo, User } from './types';
+import { Comment, MyPost, PostInfo, User, UserPageType } from './types';
 
 const myPosts = [
     { img: MugiPost1 },
@@ -40,5 +40,15 @@ export async function getComments(post_id: number): Promise<Comment[]> {
 //user
 export async function whoAmI(): Promise<User | null> {
     const res = await fetch('/api/whoAmI')
+    return res.json()
+}
+
+export async function logIn(user_name: string, email: string): Promise<User | null> {
+    const res = await fetch('/api/logIn', post({ user_name, email }))
+    return res.json()
+}
+
+export async function getUserPage(user_id: number): Promise<UserPageType> {
+    const res = await fetch(`/api/user/${user_id}`)
     return res.json()
 }

@@ -9,5 +9,21 @@ export async function postComment(req: Request) {
 
 export async function getComments(req: Request)  {
     const db = await openDB()
-    return db.get('select user_id, comment, date from Comment where post_id = ?', req.params.post_id)
+    const rows = await db.all(`
+    select c.user_id, c.comment, c.date, u.user_name, u.profile_img, u.email
+    from Comment c 
+    join User u on u.id = c.user_id
+    where c.post_id = ?`, 
+    req.params.post_id)
+
+    return rows.map(row => ({
+        user: {
+            id: row.user_id,
+            user_name: row.user_name,
+            profile_img: row.profile_img,
+            email: row.email
+        },
+        comment: row.comment,
+        date: row.date
+    }))
 }
