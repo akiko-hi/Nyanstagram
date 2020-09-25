@@ -1,0 +1,40 @@
+.SignIn {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-weight: lighter;
+
+    p {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    width: 20rem;
+
+    >* {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        font-style: 1.1rem;
+    }
+
+    input {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+}
+
+.sign_in_btn {
+    margin-top: 2rem;
+    background-color: cadetblue;
+    padding: 1rem;
+    border-radius: 5px;
+}

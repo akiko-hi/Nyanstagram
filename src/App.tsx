@@ -7,6 +7,7 @@ import { ReactComponent as FavoriteIcon } from './images/heart.svg';
 import { ReactComponent as HomeIcon } from './images/home.svg';
 import Search from './images/search.png';
 import Profile from './Profile';
+import SignIn from './SignIn';
 import { User } from './types';
 import UserPage from './UserPage';
 
@@ -69,6 +70,9 @@ function App() {
     <main>
       <Switch>
         <Route exact path="/">
+          <SignIn />
+        </Route>
+        <Route path="/home">
           <Home />
         </Route>
         <Route path="/profile">
