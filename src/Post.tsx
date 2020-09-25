@@ -1,7 +1,7 @@
 import React from 'react';
 import './Posts.scss';
 import EditBtn from './images/edit_btn.png'
-import { PostInfo } from './api';
+import { PostInfo } from './types';
 
 type PostProps = {
     post: PostInfo

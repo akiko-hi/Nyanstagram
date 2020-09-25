@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Profile.scss';
 import Setting from "./images/setting.png";
 import ProfilePic from './images/mugi.png';
-import { getMyPosts, MyPost } from './api';
+import { getMyPosts } from './api';
+import { MyPost } from './types';
 import Spinner from './images/spinner.png';
 
 export default function Profile() {
