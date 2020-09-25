@@ -29,6 +29,14 @@ foreign key (user_id) references User(id),
 foreign key (post_id) references Post(id)
 );
 
+create table Post_Comment ( 
+post_id integer,
+comment_id integer,
+foreign key (post_id) references Post(id),
+foreign key (comment_id) references Comment(id)
+);
+
+
 create table "Like" (
 id integer primary key,
 user_id integer,
