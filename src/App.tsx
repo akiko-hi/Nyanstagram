@@ -8,12 +8,16 @@ import { ReactComponent as HomeIcon } from './images/home.svg';
 import Search from './images/search.png';
 import Profile from './Profile';
 import { User } from './types';
+import UserPage from './UserPage';
 
 
 function App() {
 
   const [openDropdownMenu, setOpenDropdownMenu] = useState(false)
   const [user, setUser] = useState<User | null>()
+  const [showModal, setShowModal] = useState(false)
+  const [userName, setUserName] = useState(null)
+  const [email, setEmail] = useState(null)
 
   useEffect(() => {
     load()
@@ -39,6 +43,7 @@ function App() {
           <li><button onClick={() => setOpenDropdownMenu(!openDropdownMenu)}>
             <img className="profile_img" src={user?.profile_img} alt="profile" />
           </button></li>
+          {/* <button onClick={() =>}>Log In</button> */}
           {openDropdownMenu &&
             <ul className="dropdown_menu">
               <li><NavLink to="/profile">Profile</NavLink></li>
@@ -51,6 +56,13 @@ function App() {
       </nav>
 
     </header>
+
+    {/* {showModal && <form onSubmit={() => logIn()}className="Modal">
+      <label>User Name</label>
+      <input onChange={e => setUserName(e.currentTarget.value)} value={userName}/>
+      <label>Email</label>
+      <input onChange={e => setEmail(e.currentTarget.value)} value={email}/>
+    </form>} */}
 
 
 

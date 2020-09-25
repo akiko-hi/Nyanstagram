@@ -8,6 +8,7 @@ import Spinner from './images/spinner.png';
 
 export default function Profile() {
 
+    
     const [myPosts, setMyPosts] = useState<MyPost[]>([])
 
     useEffect(() => {

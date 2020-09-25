@@ -16,10 +16,17 @@
         border-bottom: 1px solid gray;
     }
     .profile_img {
-        height: 2rem;
+        height: 3rem;
+        width: 3rem;
+        object-fit: cover;
         border-radius: 50%;
         margin-right: 1rem;
     }
+}
+
+.user_link {
+    display: flex;
+    align-items: center;
 }
 
 .edit_post {
@@ -31,6 +38,10 @@
     margin-bottom: 0.5rem;
     max-height: 600px;
     object-fit: cover;
+
+    &.modal {
+        margin-bottom: 0;
+    }
 }
 
 .buttons_wrapper {
@@ -54,7 +65,37 @@
 }
 
 .view_all_comments {
+    color: gray;
+    font-size: 0.9rem;
+    align-self: flex-start;
+    margin: 0.5rem 0;
+}
+
+.comments_wrapper {
     border-bottom: 1px solid rgba(128, 128, 128, 0.74);
+    word-break: break-word;
+    font-size: 0.9rem;
+
+    &.grid {
+        display: grid;
+        grid-template-rows: auto 1fr auto auto;
+        max-width: 400px;
+        padding: .5rem 1rem;
+        overflow: auto;
+    }
+}
+
+.comment_container {
+    display: flex;
+}
+
+.comment_user {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.comment_comment {
+    word-wrap: break-word;
 }
 
 .comment_section {
@@ -71,4 +112,25 @@
     .post_btn {
         padding: 0 1rem;
     }
+}
+
+.Modal {
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.64);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: absolute;
+    background: white;
+    word-break: break-all;
 }

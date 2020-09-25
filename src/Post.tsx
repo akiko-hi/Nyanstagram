@@ -3,6 +3,8 @@ import './Posts.scss';
 import EditBtn from './images/edit_btn.png'
 import { PostInfo, Comment } from './types';
 import { postComment, getComments } from './api';
+import AccountContainer from './AccountContainer';
+import { Link } from 'react-router-dom';
 
 type PostProps = {
     post: PostInfo
@@ -12,6 +14,8 @@ export default function Post({ post }: PostProps) {
 
     const [comment, setComment] = useState("")
     const [allComments, setAllComments] = useState<Comment[]>([])
+    const [showModal, setShowModal] = useState(false)
+    const firstTwoComments = allComments.slice(0, 2)
 
     useEffect(() => {
         load()
@@ -41,10 +45,42 @@ export default function Post({ post }: PostProps) {
             <button className="favorite_btn"><span role="img" aria-label="favorite">😻</span></button>
         </div>
         <div>{post.caption}</div>
-        <div className="view_all_comments">{allComments.map(comment => <div>{comment.comment}</div>)}</div>
+        <button className="view_all_comments" onClick={() => setShowModal(true)}>View all {allComments.length} comments</button>
+        <div className="comments_wrapper">
+            {firstTwoComments.map(comment => <div className="comment_container">
+                <p className="comment_comment">
+                    <span className="comment_user">{comment.user.user_name}</span>
+                    {comment.comment}</p>
+            </div>)}
+        </div>
         <div className="comment_section">
             <textarea onChange={e => setComment(e.currentTarget.value)} value={comment} placeholder="Say meow to this post"></textarea>
             <button className="post_btn" onClick={() => postComment(post.id, comment)}>Post</button>
         </div>
+
+        {showModal &&
+            <div className="Modal" onClick={() => setShowModal(false)}>
+                <div className="modal_container">
+                    <img className="post modal" src={post.postImg} alt="post" />
+                    <div className="comments_wrapper grid">
+                        <AccountContainer img={post.user.profile_img} userName={post.user.user_name} caption={post.user.caption} />
+                        <div>
+                        {allComments.map(comment => <div className="comment_container">
+                            <p className="comment_comment">
+                                <span className="comment_user">{comment.user.user_name}</span>
+                                {comment.comment}</p>
+                        </div>)}
+                        </div>
+                        <div className="buttons_wrapper">
+                            <button className="like_btn"><span role="img" aria-label="like">🤍</span></button>
+                            <button><span role="img" aria-label="comment">💭</span></button>
+                            <button><span role="img" aria-label="share">🎈</span></button>
+                            <button className="favorite_btn"><span role="img" aria-label="favorite">😻</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
+
 }
